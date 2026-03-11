@@ -82,11 +82,7 @@ class ModelEvaluation:
         preprocessor_df = preprocesssing_obj.transform(test)
         return preprocessor_df
 
-    def usd_inr(self,df):
-        logging.info("Converting person_income and income_amnt USD TO INR")
-        df.person_income = df.person_income * 91.86
-        df.loan_amnt = df.loan_amnt * 91.86
-        return df
+   
     
     def _remove_outliers_age_column(self,df):
         logging.warning("Removing outliers where Person_Age > 100")
@@ -111,14 +107,13 @@ class ModelEvaluation:
         """
         try:
             test_df = pd.read_csv(self.data_ingestion_artifact.test_file_path)
+            test_df = self._remove_outliers_age_column(test_df)
             x, y = test_df.drop(TARGET_COLUMN, axis=1), test_df[TARGET_COLUMN]
 
             logging.info("Test data loaded and now transforming it for prediction...")
             
-            x = self._remove_outliers_age_column(x)
             x = self._drop_id_column(x)
-            x = self.usd_inr(x)
-            x = self.transform_test(x)
+            # x = self.transform_test(x)
 
             trained_model = load_object(file_path=self.model_trainer_artifact.trained_model_file_path)
             logging.info("Trained model loaded/exists.")

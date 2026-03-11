@@ -63,6 +63,7 @@ MODEL_TRAINER_MIN_SAMPLES_LEAF: int = 10
 MIN_SAMPLES_SPLIT_MAX_DEPTH: int = 10
 MIN_SAMPLES_SPLIT_CRITERION: str = 'gini'
 MIN_SAMPLES_SPLIT_RANDOM_STATE: int = 32
+CLASS_WEIGHT: str = 'balanced' 
 
 """
 MODEL Evaluation related constants

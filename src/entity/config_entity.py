@@ -51,6 +51,7 @@ class ModelTrainerConfig:
     _max_depth = MIN_SAMPLES_SPLIT_MAX_DEPTH
     _criterion = MIN_SAMPLES_SPLIT_CRITERION
     _random_state = MIN_SAMPLES_SPLIT_RANDOM_STATE
+    _class_weight = CLASS_WEIGHT
 
 @dataclass
 class ModelEvaluationConfig:
@@ -63,7 +64,7 @@ class ModelPusherConfig:
     bucket_name: str = MODEL_BUCKET_NAME
     s3_model_key_path: str = MODEL_FILE_NAME
 
-# @dataclass
-# class VehiclePredictorConfig:
-#     model_file_path: str = MODEL_FILE_NAME
-#     model_bucket_name: str = MODEL_BUCKET_NAME
+@dataclass
+class VehiclePredictorConfig:
+    model_file_path: str = MODEL_FILE_NAME
+    model_bucket_name: str = MODEL_BUCKET_NAME

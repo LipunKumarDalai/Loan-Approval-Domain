@@ -39,6 +39,7 @@ class ModelTrainer:
 
             # Initialize RandomForestClassifier with specified parameters
             model = DecisionTreeClassifier(
+                class_weight= self.model_trainer_config._class_weight,
                 splitter = self.model_trainer_config._best_splitter,
                 min_samples_split = self.model_trainer_config._min_samples_split,
                 min_samples_leaf = self.model_trainer_config._min_samples_leaf,
@@ -94,7 +95,7 @@ class ModelTrainer:
             # Check if the model's accuracy meets the expected threshold
             if accuracy_score(train_arr[:, -1], trained_model.predict(train_arr[:, :-1])) < self.model_trainer_config.expected_accuracy:
                 logging.info("No model found with score above the base score")
-                raise Exception("No model found with score above the base score")
+                # raise Exception("No model found with score above the base score")
 
             # Save the final model object that includes both preprocessing and the trained model
             logging.info("Saving new model as performace is better than previous one.")

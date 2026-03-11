@@ -124,6 +124,10 @@ class TrainPipeline:
             return model_pusher_artifact
         except Exception as e:
             raise MyException(e, sys)
+    def pre_push(self,trns:DataTransformationArtifact,mdl:ModelTrainerArtifact):
+        return 
+
+
 
     def run_pipeline(self, ) -> None:
         """
@@ -141,6 +145,7 @@ class TrainPipeline:
                 logging.info(f"Model not accepted.")
                 return None
             model_pusher_artifact = self.start_model_pusher(model_evaluation_artifact=model_evaluation_artifact)
+            
             
         except Exception as e:
             raise MyException(e, sys)

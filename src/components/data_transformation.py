@@ -55,7 +55,7 @@ class DataTransformation:
             #Creating preprocessor pipeline
             preprocessor = ColumnTransformer(
                 transformers=[
-                    ("encoder", OneHotEncoder(handle_unknown="ignore",sparse_output=False), num_features_cat)
+                    ("encoder", OneHotEncoder(sparse_output=False), num_features_cat)
                 ],
                 remainder='passthrough'  # Leaves other columns as they are
             )
@@ -71,11 +71,11 @@ class DataTransformation:
             raise MyException(e, sys) from e
     
 
-    def usd_inr(self,df):
-        logging.info("Converting person_income and income_amnt USD TO INR")
-        df.person_income = df.person_income * 91.86
-        df.loan_amnt = df.loan_amnt * 91.86
-        return df
+    # def usd_inr(self,df):
+    #     logging.info("Converting person_income and income_amnt USD TO INR")
+    #     df.person_income = df.person_income * 91.86
+    #     df.loan_amnt = df.loan_amnt * 91.86
+    #     return df
 
     def _remove_outliers_age_column(self,df):
         logging.warning("Removing outliers where Person_Age > 100")
@@ -123,13 +123,13 @@ class DataTransformation:
 
             # Apply custom transformations in specified sequence
             # input_feature_train_df = self._map_gender_column(input_feature_train_df)
-            input_feature_train_df = self.usd_inr(input_feature_train_df)
+          
             input_feature_train_df = self._drop_id_column(input_feature_train_df)
             # input_feature_train_df = self._create_dummy_columns(input_feature_train_df)
             # input_feature_train_df = self._rename_columns(input_feature_train_df)
 
             # input_feature_test_df = self._map_gender_column(input_feature_test_df)
-            input_feature_test_df = self.usd_inr(input_feature_test_df)
+            
             input_feature_test_df = self._drop_id_column(input_feature_test_df)
             # input_feature_test_df = self._create_dummy_columns(input_feature_test_df)
             # input_feature_test_df = self._rename_columns(input_feature_test_df)

@@ -1,11 +1,5 @@
-Below is a **recruiter-friendly, modern GitHub README** for your project.
-It highlights **MLOps skills, cloud deployment, CI/CD, Docker, AWS, MongoDB, and ML pipeline architecture**, which recruiters love to see.
 
-You can copy this directly into your `README.md`.
-
----
-
-# 🚗 Vehicle Data MLOps Pipeline
+# Loan Domain MLOps Pipeline
 
 ### End-to-End Machine Learning Project with CI/CD, Docker, AWS & MongoDB
 
@@ -159,29 +153,6 @@ vehicle-data-mlops
 
 ```bash
 python template.py
-```
-
----
-
-# 🧪 Environment Setup
-
-Create and activate virtual environment:
-
-```bash
-conda create -n vehicle python=3.10 -y
-conda activate vehicle
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Verify installation:
-
-```bash
-pip list
 ```
 
 ---
@@ -420,7 +391,7 @@ Run commands on EC2:
 
 # 🌐 Application Access
 
-Allow port **5080** in EC2 security group.
+Allow port **5000** in EC2 security group.
 
 Access application:
 
@@ -462,7 +433,7 @@ This project demonstrates real **production ML system design** including:
 
 **Lipu Daman**
 
-Machine Learning | MLOps | Data Engineering
+Machine Learning | MLOps | Data Scientist
 
 ---
 

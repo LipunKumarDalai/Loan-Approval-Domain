@@ -438,7 +438,3 @@ Machine Learning | MLOps | Data Scientist
 ---
 
 ⭐ If you like this project, please **star the repository**!
-
----
-
-💡 If you want, I can also help you create a **NEXT-LEVEL README that looks like a top GitHub project (with architecture diagrams, gifs, badges, and recruiter-attracting sections)**.

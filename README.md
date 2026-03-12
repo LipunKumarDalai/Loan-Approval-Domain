@@ -1,428 +1,473 @@
-.
+Below is a **recruiter-friendly, modern GitHub README** for your project.
+It highlights **MLOps skills, cloud deployment, CI/CD, Docker, AWS, MongoDB, and ML pipeline architecture**, which recruiters love to see.
 
-🚗 Vehicle Data MLOps Project
+You can copy this directly into your `README.md`.
 
-A production-grade End-to-End MLOps pipeline for vehicle data processing, model training, and deployment using MongoDB, AWS, Docker, and CI/CD automation.
+---
 
-This project demonstrates how to build a complete machine learning lifecycle pipeline, starting from data ingestion to automated deployment on AWS EC2 using GitHub Actions.
+# 🚗 Vehicle Data MLOps Pipeline
 
-📌 Project Architecture
-Data Source
-    │
-    ▼
-MongoDB Atlas
-    │
-    ▼
+### End-to-End Machine Learning Project with CI/CD, Docker, AWS & MongoDB
+
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![ML](https://img.shields.io/badge/Machine%20Learning-Pipeline-green)
+![MLOps](https://img.shields.io/badge/MLOps-End--to--End-orange)
+![AWS](https://img.shields.io/badge/AWS-S3%20%7C%20EC2%20%7C%20ECR-yellow)
+![Docker](https://img.shields.io/badge/Docker-Containerized-blue)
+![CI/CD](https://img.shields.io/badge/GitHub-Actions-purple)
+
+An **End-to-End MLOps project** that demonstrates how a real-world machine learning system is built, deployed, and automated using modern industry tools.
+
+This project implements a **complete ML lifecycle pipeline**, including:
+
+* Data ingestion from **MongoDB Atlas**
+* Data validation and transformation
+* Model training and evaluation
+* Model versioning in **AWS S3**
+* Containerization with **Docker**
+* Automated **CI/CD using GitHub Actions**
+* Deployment on **AWS EC2**
+
+The project simulates a **production-grade ML system architecture**.
+
+---
+
+# 📌 Project Architecture
+
+```
+Data Source (MongoDB Atlas)
+        │
+        ▼
 Data Ingestion
-    │
-    ▼
+        │
+        ▼
 Data Validation
-    │
-    ▼
+        │
+        ▼
 Data Transformation
-    │
-    ▼
+        │
+        ▼
 Model Trainer
-    │
-    ▼
+        │
+        ▼
 Model Evaluation
-    │
-    ▼
-Model Registry (AWS S3)
-    │
-    ▼
-Model Pusher
-    │
-    ▼
+        │
+        ▼
+Model Pusher (AWS S3)
+        │
+        ▼
 Prediction Pipeline
-    │
-    ▼
-Flask Web App
-    │
-    ▼
-Docker + CI/CD
-    │
-    ▼
-AWS EC2 Deployment
-🚀 Features
+        │
+        ▼
+Web Application (Flask)
+        │
+        ▼
+Docker Container
+        │
+        ▼
+CI/CD (GitHub Actions)
+        │
+        ▼
+Deployment (AWS EC2)
+```
 
-✔ Modular ML pipeline architecture
-✔ MongoDB Atlas for dataset storage
-✔ Automated data ingestion & validation
-✔ Feature engineering pipeline
-✔ Model training and evaluation
-✔ Model registry using AWS S3
-✔ Docker containerization
-✔ CI/CD using GitHub Actions
-✔ Self-hosted runner on AWS EC2
-✔ End-to-end deployment automation
+---
 
-🧱 Project Setup
-1️⃣ Create Project Template
+# ⚙️ Tech Stack
 
-Generate the project folder structure.
+### Programming
 
+* Python 3.10
+
+### Machine Learning
+
+* Scikit-Learn
+* Pandas
+* NumPy
+
+### MLOps
+
+* Docker
+* GitHub Actions
+* CI/CD Automation
+
+### Cloud
+
+* AWS S3 (Model Registry)
+* AWS EC2 (Deployment)
+* AWS ECR (Docker Registry)
+
+### Database
+
+* MongoDB Atlas
+
+### Backend
+
+* Flask
+
+---
+
+# 📂 Project Structure
+
+```
+vehicle-data-mlops
+│
+├── notebook/
+│   ├── mongoDB_demo.ipynb
+│   ├── EDA.ipynb
+│
+├── src/
+│   ├── components/
+│   │   ├── data_ingestion.py
+│   │   ├── data_validation.py
+│   │   ├── data_transformation.py
+│   │   ├── model_trainer.py
+│   │   ├── model_evaluation.py
+│   │   └── model_pusher.py
+│   │
+│   ├── configuration/
+│   │   ├── mongo_db_connection.py
+│   │   └── aws_connection.py
+│   │
+│   ├── entity/
+│   │   ├── config_entity.py
+│   │   ├── artifact_entity.py
+│   │   ├── estimator.py
+│   │   └── s3_estimator.py
+│   │
+│   ├── utils/
+│   │   └── main_utils.py
+│
+├── pipeline/
+│   ├── training_pipeline.py
+│   └── prediction_pipeline.py
+│
+├── app.py
+├── requirements.txt
+├── setup.py
+├── pyproject.toml
+├── Dockerfile
+├── .dockerignore
+└── README.md
+```
+
+---
+
+# 🚀 Getting Started
+
+## 1️⃣ Create Project Template
+
+```bash
 python template.py
-📦 Package Configuration
+```
 
-Configure local packages using:
+---
 
-setup.py
+# 🧪 Environment Setup
 
-pyproject.toml
+Create and activate virtual environment:
 
-For detailed explanation refer:
-
-crashcourse.txt
-🐍 Environment Setup
-
-Create and activate a virtual environment.
-
+```bash
 conda create -n vehicle python=3.10 -y
 conda activate vehicle
+```
 
 Install dependencies:
 
+```bash
 pip install -r requirements.txt
+```
 
 Verify installation:
 
+```bash
 pip list
-🍃 MongoDB Atlas Setup
-Step 1 — Create MongoDB Project
+```
 
-Sign up on MongoDB Atlas
+---
 
-Create a new project
+# 🗄️ MongoDB Setup
 
-Create a cluster
+1. Sign up at **MongoDB Atlas**
+2. Create a new project
+3. Create a **Cluster (M0 Free Tier)**
+4. Create database user
+5. Allow network access:
 
-Choose:
-
-Cluster Tier: M0 (Free)
-Step 2 — Create Database User
-
-Configure:
-
-Username
-Password
-Step 3 — Network Access
-
-Add IP:
-
+```
 0.0.0.0/0
+```
 
-This allows connection from anywhere.
+6. Get connection string
 
-Step 4 — Get Connection String
+```
+mongodb+srv://<username>:<password>@cluster.mongodb.net
+```
 
-Navigate:
+7. Store connection string as environment variable
 
-Cluster → Connect → Drivers
+### Bash
 
-Select:
-
-Driver : Python
-Version: 3.6+
-
-Example:
-
-mongodb+srv://<username>:<password>@cluster.mongodb.net/
-📊 Dataset Upload
-
-Create a folder:
-
-notebook/
-
-Add dataset.
-
-Create notebook:
-
-mongoDB_demo.ipynb
-
-Upload dataset to MongoDB using Python.
-
-Verify data in:
-
-MongoDB Atlas → Database → Browse Collections
-🧾 Logging & Exception Handling
-
-Custom modules implemented:
-
-logger.py
-exception.py
-
-Test using:
-
-demo.py
-📊 Exploratory Data Analysis
-
-Notebook added for:
-
-Data exploration
-
-Feature engineering
-
-EDA_Feature_Engineering.ipynb
-⚙ Data Ingestion Pipeline
-
-Steps implemented:
-
-MongoDB connection
-
-Fetch data
-
-Convert key-value records → Pandas DataFrame
-
-Store artifacts
-
-Main files involved:
-
-configuration.mongo_db_connections.py
-data_access.proj1_data.py
-entity.config_entity.py
-entity.artifact_entity.py
-components.data_ingestion.py
-🔑 MongoDB Environment Variable
-Bash
+```bash
 export MONGODB_URL="mongodb+srv://<username>:<password>..."
 echo $MONGODB_URL
-PowerShell
+```
+
+### PowerShell
+
+```powershell
 $env:MONGODB_URL="mongodb+srv://<username>:<password>..."
 echo $env:MONGODB_URL
+```
 
-Add artifacts folder to .gitignore.
+---
 
-🔍 Data Validation
+# 📊 Data Ingestion Pipeline
 
-Dataset validation using schema:
+The ingestion pipeline:
 
+* Connects to **MongoDB Atlas**
+* Fetches raw dataset
+* Converts key-value records into **Pandas DataFrame**
+* Stores dataset inside **artifact directory**
+
+Main modules involved:
+
+```
+data_access/
+configuration/
+entity/
+components/data_ingestion.py
+```
+
+---
+
+# 🔍 Data Validation
+
+Validation checks include:
+
+* Schema validation
+* Column type validation
+* Missing values
+* Data consistency
+
+Configuration defined in:
+
+```
 config/schema.yaml
+```
 
-Utility functions:
+---
 
-utils/main_utils.py
-🔄 Data Transformation
+# 🔧 Data Transformation
 
-Pipeline for:
+Feature engineering and preprocessing steps:
 
-Feature engineering
+* Handling missing values
+* Feature scaling
+* Encoding categorical variables
+* Preparing training dataset
 
-Data preprocessing
+---
 
-Feature scaling
+# 🤖 Model Training
 
-Encoding
+The model trainer:
 
-Includes:
+* Splits dataset
+* Trains ML models
+* Selects best performing model
+* Saves trained model artifact
 
-entity/estimator.py
-🤖 Model Training
+---
 
-Train ML models using transformed dataset.
+# 📈 Model Evaluation
 
-Pipeline components:
+Compares new model with previous production model.
 
-components/model_trainer.py
+Threshold defined in constants:
 
-Artifacts generated:
+```
+MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE = 0.02
+```
 
-trained model
+If performance improves → model is pushed to **S3 Model Registry**
 
-evaluation metrics
+---
 
-☁ AWS Setup
+# ☁️ AWS Setup
 
-Login to AWS Console
+Create IAM user:
 
-Set region:
+```
+firstproj
+```
 
-us-east-1
-Create IAM User
-IAM → Create User
-Name: firstproj
-Policy: AdministratorAccess
+Attach policy:
 
-Create access key for CLI.
+```
+AdministratorAccess
+```
 
-Set Environment Variables
-Bash
-export AWS_ACCESS_KEY_ID="AWS_ACCESS_KEY_ID"
-export AWS_SECRET_ACCESS_KEY="AWS_SECRET_ACCESS_KEY"
-PowerShell
-$env:AWS_ACCESS_KEY_ID="AWS_ACCESS_KEY_ID"
-$env:AWS_SECRET_ACCESS_KEY="AWS_SECRET_ACCESS_KEY"
-🪣 AWS S3 Model Registry
+Create environment variables:
+
+### Bash
+
+```bash
+export AWS_ACCESS_KEY_ID="XXXX"
+export AWS_SECRET_ACCESS_KEY="XXXX"
+```
+
+### PowerShell
+
+```powershell
+$env:AWS_ACCESS_KEY_ID="XXXX"
+$env:AWS_SECRET_ACCESS_KEY="XXXX"
+```
+
+---
+
+# 🪣 AWS S3 Model Registry
 
 Create bucket:
 
+```
 my-model-mlopsproj
+```
 
-Used for storing trained models.
+Used for:
 
-Constants configuration:
+* Model storage
+* Model versioning
+* Production model comparison
 
-MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE = 0.02
-MODEL_BUCKET_NAME = "my-model-mlopsproj"
-MODEL_PUSHER_S3_KEY = "model-registry"
-📤 Model Evaluation & Model Pusher
+---
 
-Components:
+# 🐳 Docker Setup
 
-Model Evaluation
-Model Pusher
+Build docker image:
 
-Purpose:
-
-Compare new model with existing model
-
-Push best model to S3 Model Registry
-
-🔮 Prediction Pipeline
-
-Prediction API implemented.
-
-Main files:
-
-app.py
-prediction_pipeline.py
-
-Routes:
-
-/training
-/predict
-🌐 Web Application
-
-Flask based application with:
-
-templates/
-static/
-
-Used to perform real-time predictions.
-
-🐳 Docker Setup
-
-Create:
-
-Dockerfile
-.dockerignore
-
-Build image:
-
+```bash
 docker build -t vehicleproj .
+```
 
 Run container:
 
+```bash
 docker run -p 5080:5080 vehicleproj
-🔄 CI/CD Pipeline
+```
 
-GitHub Actions workflow added:
+---
 
-.github/workflows/aws.yaml
+# 🔄 CI/CD Pipeline (GitHub Actions)
 
-Pipeline includes:
+CI/CD automatically performs:
 
-Docker image build
+1️⃣ Build Docker Image
+2️⃣ Push image to **AWS ECR**
+3️⃣ Deploy to **EC2 instance**
 
-Push image to AWS ECR
+Secrets required in GitHub:
 
-Deploy to EC2
-
-📦 AWS ECR Setup
-
-Create repository:
-
-vehicleproj
-
-Copy repository URI.
-
-Used to store Docker images.
-
-🖥 EC2 Server Setup
-
-Launch instance:
-
-Instance Name : vehicledata-machine
-AMI           : Ubuntu Server 24.04
-Instance Type : t2.medium
-Storage       : 30GB
-🐳 Install Docker on EC2
-sudo apt-get update -y
-sudo apt-get upgrade
-
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-
-sudo usermod -aG docker ubuntu
-newgrp docker
-🔗 GitHub Self Hosted Runner
-
-Setup runner:
-
-GitHub → Settings → Actions → Runners
-
-Run commands on EC2.
-
-Start runner:
-
-./run.sh
-
-Runner status should appear:
-
-idle
-🔐 GitHub Secrets
-
-Add secrets:
-
+```
 AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY
 AWS_DEFAULT_REGION
 ECR_REPO
+```
 
-Location:
+---
 
-GitHub → Settings → Secrets → Actions
-🚀 Deployment
+# 🖥️ EC2 Deployment
 
-CI/CD pipeline triggers automatically on:
+Launch EC2 instance:
 
-git push
-🌍 Application Access
+```
+Ubuntu Server 24.04
+Instance: t2.medium
+Storage: 30GB
+```
 
-Open browser:
+Install Docker:
 
-http://<EC2_PUBLIC_IP>:5080
-🎯 Training Endpoint
+```bash
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker ubuntu
+newgrp docker
+```
 
-You can trigger model training using:
+---
 
+# 🔗 Self Hosted Runner (GitHub → EC2)
+
+Steps:
+
+```
+GitHub → Settings
+Actions → Runner
+New Self Hosted Runner
+```
+
+Run commands on EC2:
+
+```
+./config.sh
+./run.sh
+```
+
+---
+
+# 🌐 Application Access
+
+Allow port **5080** in EC2 security group.
+
+Access application:
+
+```
+http://<EC2-PUBLIC-IP>:5080
+```
+
+Training endpoint:
+
+```
 /training
+```
 
-Example:
+---
 
-http://<EC2_PUBLIC_IP>:5080/training
-🛠 Tech Stack
-Category	Tools
-Language	Python
-ML	Scikit-learn
-Database	MongoDB Atlas
-Cloud	AWS
-Storage	AWS S3
-Containerization	Docker
-CI/CD	GitHub Actions
-Deployment	AWS EC2
-API	Flask
-📂 Project Structure
-src/
-│
-├── components
-├── configuration
-├── entity
-├── data_access
-├── pipeline
-├── utils
-│
-notebook/
-templates/
-static/
-artifacts/
+# 📸 Application Features
+
+✔ Train ML model from UI
+✔ Predict using trained model
+✔ Fully automated CI/CD deployment
+✔ Cloud model registry
+
+---
+
+# 🧠 Key Learning Outcomes
+
+This project demonstrates real **production ML system design** including:
+
+* End-to-End ML pipelines
+* Cloud infrastructure
+* Model versioning
+* CI/CD automation
+* Docker containerization
+* Scalable deployment architecture
+
+---
+
+# 👨‍💻 Author
+
+**Lipu Daman**
+
+Machine Learning | MLOps | Data Engineering
+
+---
+
+⭐ If you like this project, please **star the repository**!
+
+---
+
+💡 If you want, I can also help you create a **NEXT-LEVEL README that looks like a top GitHub project (with architecture diagrams, gifs, badges, and recruiter-attracting sections)**.

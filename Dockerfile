@@ -14,5 +14,5 @@ RUN pip install -r requirements.txt
 EXPOSE 5000
 
 # Command to run the FastAPI app
-CMD ["python3", "app.py"]
+CMD ["streamlit", "run", "app.py", "--server.port=5000", "--server.address=0.0.0.0"]
 # CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8080"]

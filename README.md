@@ -53,7 +53,7 @@ Model Pusher (AWS S3)
 Prediction Pipeline
         │
         ▼
-Web Application (Flask)
+Web Application (Streamlit)
         │
         ▼
 Docker Container

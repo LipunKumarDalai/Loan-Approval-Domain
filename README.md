@@ -396,7 +396,7 @@ Allow port **5000** in EC2 security group.
 Access application:
 
 ```
-http://<EC2-PUBLIC-IP>:5080
+http://<EC2-PUBLIC-IP>:5000
 ```
 
 Training endpoint:

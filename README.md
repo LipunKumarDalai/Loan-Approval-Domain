@@ -97,7 +97,7 @@ Deployment (AWS EC2)
 
 ### Backend
 
-* Flask
+* Streamlit
 
 ---
 

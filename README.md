@@ -1,11 +1,5 @@
-Below is a **recruiter-friendly, modern GitHub README** for your project.
-It highlights **MLOps skills, cloud deployment, CI/CD, Docker, AWS, MongoDB, and ML pipeline architecture**, which recruiters love to see.
 
-You can copy this directly into your `README.md`.
-
----
-
-# 🚗 Vehicle Data MLOps Pipeline
+# Loan Domain MLOps Pipeline
 
 ### End-to-End Machine Learning Project with CI/CD, Docker, AWS & MongoDB
 
@@ -59,7 +53,7 @@ Model Pusher (AWS S3)
 Prediction Pipeline
         │
         ▼
-Web Application (Flask)
+Web Application (Streamlit)
         │
         ▼
 Docker Container
@@ -103,7 +97,7 @@ Deployment (AWS EC2)
 
 ### Backend
 
-* Flask
+* Streamlit
 
 ---
 
@@ -159,29 +153,6 @@ vehicle-data-mlops
 
 ```bash
 python template.py
-```
-
----
-
-# 🧪 Environment Setup
-
-Create and activate virtual environment:
-
-```bash
-conda create -n vehicle python=3.10 -y
-conda activate vehicle
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Verify installation:
-
-```bash
-pip list
 ```
 
 ---
@@ -420,12 +391,12 @@ Run commands on EC2:
 
 # 🌐 Application Access
 
-Allow port **5080** in EC2 security group.
+Allow port **5000** in EC2 security group.
 
 Access application:
 
 ```
-http://<EC2-PUBLIC-IP>:5080
+http://<EC2-PUBLIC-IP>:5000
 ```
 
 Training endpoint:
@@ -462,12 +433,8 @@ This project demonstrates real **production ML system design** including:
 
 **Lipu Daman**
 
-Machine Learning | MLOps | Data Engineering
+Machine Learning | MLOps | Data Scientist
 
 ---
 
 ⭐ If you like this project, please **star the repository**!
-
----
-
-💡 If you want, I can also help you create a **NEXT-LEVEL README that looks like a top GitHub project (with architecture diagrams, gifs, badges, and recruiter-attracting sections)**.

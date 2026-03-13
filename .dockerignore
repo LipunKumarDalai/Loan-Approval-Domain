@@ -9,3 +9,4 @@ README.md
 LICENSE
 src.egg.-info
 Loan
+notebook/*.ipynb

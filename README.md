@@ -149,50 +149,6 @@ vehicle-data-mlops
 
 # 🚀 Getting Started
 
-## 1️⃣ Create Project Template
-
-```bash
-python template.py
-```
-
----
-
-# 🗄️ MongoDB Setup
-
-1. Sign up at **MongoDB Atlas**
-2. Create a new project
-3. Create a **Cluster (M0 Free Tier)**
-4. Create database user
-5. Allow network access:
-
-```
-0.0.0.0/0
-```
-
-6. Get connection string
-
-```
-mongodb+srv://<username>:<password>@cluster.mongodb.net
-```
-
-7. Store connection string as environment variable
-
-### Bash
-
-```bash
-export MONGODB_URL="mongodb+srv://<username>:<password>..."
-echo $MONGODB_URL
-```
-
-### PowerShell
-
-```powershell
-$env:MONGODB_URL="mongodb+srv://<username>:<password>..."
-echo $env:MONGODB_URL
-```
-
----
-
 # 📊 Data Ingestion Pipeline
 
 The ingestion pipeline:
@@ -265,71 +221,6 @@ MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE = 0.02
 If performance improves → model is pushed to **S3 Model Registry**
 
 ---
-
-# ☁️ AWS Setup
-
-Create IAM user:
-
-```
-firstproj
-```
-
-Attach policy:
-
-```
-AdministratorAccess
-```
-
-Create environment variables:
-
-### Bash
-
-```bash
-export AWS_ACCESS_KEY_ID="XXXX"
-export AWS_SECRET_ACCESS_KEY="XXXX"
-```
-
-### PowerShell
-
-```powershell
-$env:AWS_ACCESS_KEY_ID="XXXX"
-$env:AWS_SECRET_ACCESS_KEY="XXXX"
-```
-
----
-
-# 🪣 AWS S3 Model Registry
-
-Create bucket:
-
-```
-my-model-mlopsproj
-```
-
-Used for:
-
-* Model storage
-* Model versioning
-* Production model comparison
-
----
-
-# 🐳 Docker Setup
-
-Build docker image:
-
-```bash
-docker build -t vehicleproj .
-```
-
-Run container:
-
-```bash
-docker run -p 5080:5080 vehicleproj
-```
-
----
-
 # 🔄 CI/CD Pipeline (GitHub Actions)
 
 CI/CD automatically performs:
